@@ -235,7 +235,6 @@ open http://localhost:4000
 
 - **README.md**: Main documentation and quick start
 - **CONTRIBUTING.md**: Contribution guidelines
-- **docs/CONTENT_CREATION.md**: Comprehensive guide for creating content (posts, publications, presentations, resources)
 - **docs/AUTOMATION.md**: Workflow and script details
 - **docs/DEPLOYMENT.md**: Deployment guide
 - **docs/TESTING.md**: Testing procedures
