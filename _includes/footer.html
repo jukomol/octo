@@ -1,0 +1,30 @@
+<footer class="bg-gray-100 border-t border-gray-200 mt-12">
+  <div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-lg font-semibold mb-3">{{ site.data.bio.name | default: site.title }}</h3>
+        <p class="text-sm text-gray-600">{{ site.data.bio.tagline | default: site.description }}</p>
+      </div>
+      
+      <div>
+        <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="{{ '/pages/publications.html' | relative_url }}">Publications</a></li>
+          <li><a href="{{ '/pages/presentations.html' | relative_url }}">Presentations</a></li>
+          <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+          <li><a href="{{ '/pages/contact.html' | relative_url }}">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="text-lg font-semibold mb-3">Connect</h3>
+        {% include social-icons.html %}
+      </div>
+    </div>
+    
+    <div class="mt-8 pt-8 border-t border-gray-300 text-center text-sm text-gray-600">
+      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.data.bio.name | default: site.title }}. All rights reserved.</p>
+      <p class="mt-2">Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a> and <a href="https://tailwindcss.com/" target="_blank" rel="noopener">Tailwind CSS</a></p>
+    </div>
+  </div>
+</footer>

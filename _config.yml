@@ -1,0 +1,70 @@
+# Site settings
+title: "Jahir Uddin"
+description: "Academic Portfolio and Research Website"
+author: "Jahir Uddin"
+email: "juddin@unmc.edu"
+baseurl: ""
+url: "https://jukomol.github.io"
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+timezone: America/Chicago
+
+# Collections
+collections:
+  pubs:
+    output: true
+    permalink: /publications/:name/
+  talks:
+    output: true
+    permalink: /presentations/:name/
+  resources:
+    output: true
+    permalink: /resources/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pubs"
+    values:
+      layout: "pub"
+  - scope:
+      path: ""
+      type: "talks"
+    values:
+      layout: "talk"
+  - scope:
+      path: ""
+      type: "resources"
+    values:
+      layout: "resource"
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+  - tailwind.config.js
+  - scripts
+  - README.md
+  - .git
+  - .github
+
+# Include in processing
+include:
+  - _pages

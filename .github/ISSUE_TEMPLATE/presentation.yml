@@ -1,0 +1,37 @@
+name: "🎤 New Presentation"
+description: Add a new presentation or talk
+title: "[TALK] "
+labels: ["presentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Add a New Presentation
+        Fill out the information below. The front matter will be extracted automatically.
+        
+  - type: textarea
+    id: content
+    attributes:
+      label: Presentation Details
+      description: Include YAML front matter at the top, followed by description
+      placeholder: |
+        ---
+        title: "AI for Safer Farms"
+        event: "UNMC Research Day"
+        date: 2025-09-20
+        slides: https://...
+        video: https://...
+        ---
+        
+        Presentation description...
+      value: |
+        ---
+        title: ""
+        event: ""
+        date: 2025-10-16
+        slides: 
+        video: 
+        ---
+        
+    validations:
+      required: true
