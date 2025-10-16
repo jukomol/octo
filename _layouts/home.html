@@ -1,0 +1,134 @@
+---
+layout: default
+---
+
+<div class="max-w-6xl mx-auto">
+  <!-- Hero Section -->
+  <section class="mb-12">
+    <div class="flex flex-col md:flex-row items-center gap-8 mb-8">
+      {% if site.data.bio.photo %}
+      <div class="flex-shrink-0">
+        <img src="{{ site.data.bio.photo | relative_url }}" alt="{{ site.data.bio.name }}" class="w-48 h-48 rounded-full object-cover shadow-lg border-4 border-primary">
+      </div>
+      {% endif %}
+      
+      <div class="flex-grow text-center md:text-left">
+        <h1 class="text-5xl font-bold mb-2">{{ site.data.bio.name | default: "Academic Portfolio" }}</h1>
+        <p class="text-2xl text-gray-600 mb-3">{{ site.data.bio.tagline }}</p>
+        <p class="text-lg text-gray-700 mb-2">{{ site.data.bio.title }}</p>
+        <p class="text-lg text-primary font-medium mb-4">{{ site.data.bio.institution }}</p>
+        
+        <div class="flex flex-wrap gap-3 justify-center md:justify-start mb-4">
+          {% if site.data.bio.email %}
+          <a href="mailto:{{ site.data.bio.email }}" class="btn btn-primary">
+            <svg class="inline w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+            </svg>
+            Email Me
+          </a>
+          {% endif %}
+          
+          {% if site.data.bio.download_cv %}
+          <a href="{{ site.data.bio.download_cv | relative_url }}" class="btn btn-secondary" download>
+            <svg class="inline w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+            Download CV
+          </a>
+          {% endif %}
+        </div>
+        
+        {% include social-icons.html %}
+      </div>
+    </div>
+    
+    {% if site.data.bio.summary %}
+    <div class="prose max-w-none">
+      <p class="text-lg leading-relaxed">{{ site.data.bio.summary }}</p>
+    </div>
+    {% endif %}
+  </section>
+
+  {{ content }}
+
+  <!-- Recent Posts -->
+  {% if site.posts.size > 0 %}
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Recent Blog Posts</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for post in site.posts limit:3 %}
+      <article class="card">
+        {% if post.cover %}
+        <img src="{{ post.cover }}" alt="{{ post.title }}" class="w-full h-48 object-cover rounded-t-lg -mx-6 -mt-6 mb-4">
+        {% endif %}
+        
+        <h3 class="text-xl font-semibold mb-2">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        
+        <p class="text-sm text-gray-600 mb-3">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+        </p>
+        
+        {% if post.summary %}
+        <p class="text-gray-700 mb-4">{{ post.summary }}</p>
+        {% else %}
+        <p class="text-gray-700 mb-4">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+        {% endif %}
+        
+        <a href="{{ post.url | relative_url }}" class="text-accent font-medium">Read more →</a>
+      </article>
+      {% endfor %}
+    </div>
+    
+    {% if site.posts.size > 3 %}
+    <div class="mt-6 text-center">
+      <a href="{{ '/blog/' | relative_url }}" class="btn btn-primary">View All Posts</a>
+    </div>
+    {% endif %}
+  </section>
+  {% endif %}
+
+  <!-- Recent Publications -->
+  {% if site.pubs.size > 0 %}
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">Recent Publications</h2>
+    <div class="space-y-6">
+      {% for pub in site.pubs limit:3 %}
+      <article class="card">
+        <h3 class="text-xl font-semibold mb-2">
+          <a href="{{ pub.url | relative_url }}">{{ pub.title }}</a>
+        </h3>
+        
+        {% if pub.authors %}
+        <p class="text-gray-700 mb-2">{{ pub.authors }}</p>
+        {% endif %}
+        
+        {% if pub.venue %}
+        <p class="text-sm text-gray-600 mb-3"><em>{{ pub.venue }}</em></p>
+        {% endif %}
+        
+        <div class="flex flex-wrap gap-2">
+          {% if pub.pdf %}
+          <a href="{{ pub.pdf }}" class="badge badge-primary" target="_blank" rel="noopener">PDF</a>
+          {% endif %}
+          {% if pub.code %}
+          <a href="{{ pub.code }}" class="badge badge-secondary" target="_blank" rel="noopener">Code</a>
+          {% endif %}
+          {% if pub.doi %}
+          <a href="https://doi.org/{{ pub.doi }}" class="badge badge-primary" target="_blank" rel="noopener">DOI</a>
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    
+    {% if site.pubs.size > 3 %}
+    <div class="mt-6 text-center">
+      <a href="{{ '/pages/publications.html' | relative_url }}" class="btn btn-primary">View All Publications</a>
+    </div>
+    {% endif %}
+  </section>
+  {% endif %}
+</div>

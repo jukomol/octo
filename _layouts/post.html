@@ -1,0 +1,71 @@
+---
+layout: default
+---
+
+<article class="max-w-4xl mx-auto">
+  <header class="mb-8">
+    <h1 class="text-4xl font-bold mb-3">{{ page.title }}</h1>
+    
+    <div class="flex flex-wrap items-center gap-4 text-gray-600 mb-4">
+      <time datetime="{{ page.date | date_to_xmlschema }}" class="text-sm">
+        {{ page.date | date: "%B %d, %Y" }}
+      </time>
+      
+      {% if page.tags and page.tags.size > 0 %}
+      <div class="flex flex-wrap gap-2">
+        {% for tag in page.tags %}
+        <span class="badge badge-primary">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    
+    {% if page.cover %}
+    <img src="{{ page.cover }}" alt="{{ page.title }}" class="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg mb-6">
+    {% endif %}
+    
+    {% if page.summary %}
+    <p class="text-xl text-gray-700 leading-relaxed">{{ page.summary }}</p>
+    {% endif %}
+  </header>
+
+  <div class="prose max-w-none">
+    {{ content }}
+  </div>
+  
+  <footer class="mt-12 pt-8 border-t border-gray-200">
+    <div class="flex justify-between items-center">
+      {% if page.previous.url %}
+      <a href="{{ page.previous.url | relative_url }}" class="text-accent">← {{ page.previous.title | truncate: 30 }}</a>
+      {% else %}
+      <span></span>
+      {% endif %}
+      
+      {% if page.next.url %}
+      <a href="{{ page.next.url | relative_url }}" class="text-accent">{{ page.next.title | truncate: 30 }} →</a>
+      {% else %}
+      <span></span>
+      {% endif %}
+    </div>
+  </footer>
+  
+  {% if site.data.site.giscus.enabled %}
+  <section class="mt-12 pt-8 border-t border-gray-200">
+    <script src="https://giscus.app/client.js"
+            data-repo="{{ site.data.site.giscus.repo }}"
+            data-repo-id="{{ site.data.site.giscus.repo_id }}"
+            data-category="{{ site.data.site.giscus.category }}"
+            data-category-id="{{ site.data.site.giscus.category_id }}"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="en"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </section>
+  {% endif %}
+</article>

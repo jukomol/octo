@@ -1,0 +1,39 @@
+name: "📚 New Publication"
+description: Add a new publication
+title: "[PUB] "
+labels: ["pub"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Add a New Publication
+        Fill out the information below. The front matter will be extracted automatically.
+        
+  - type: textarea
+    id: content
+    attributes:
+      label: Publication Details
+      description: Include YAML front matter at the top, followed by abstract/description
+      placeholder: |
+        ---
+        title: "Smart Agricultural Operator Monitoring System (AG-OMS V2)"
+        authors: "J. Uddin, B. Lowndes, A. Yoder"
+        venue: "IEEE AgriTech, 2025"
+        doi: "10.xxxx/xxxxx"
+        pdf: https://...
+        code: https://github.com/...
+        ---
+        
+        Abstract markdown...
+      value: |
+        ---
+        title: ""
+        authors: ""
+        venue: ""
+        doi: ""
+        pdf: 
+        code: 
+        ---
+        
+    validations:
+      required: true

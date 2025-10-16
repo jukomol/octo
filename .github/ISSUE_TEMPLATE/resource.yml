@@ -1,0 +1,35 @@
+name: "🔗 New Resource"
+description: Add a new resource or dataset
+title: "[RESOURCE] "
+labels: ["resource"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Add a New Resource
+        Fill out the information below. The front matter will be extracted automatically.
+        
+  - type: textarea
+    id: content
+    attributes:
+      label: Resource Details
+      description: Include YAML front matter at the top, followed by description
+      placeholder: |
+        ---
+        title: "Dataset: Tractor Climb Safety Video Set"
+        url: https://...
+        category: "Dataset"
+        notes: "Synthetic and real-world operator data."
+        ---
+        
+        Resource description...
+      value: |
+        ---
+        title: ""
+        url: 
+        category: ""
+        notes: ""
+        ---
+        
+    validations:
+      required: true

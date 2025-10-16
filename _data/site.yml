@@ -1,0 +1,23 @@
+site_name: "Jahir Uddin"
+description: "Academic Portfolio and Research Website"
+baseurl: ""
+url: "https://jukomol.github.io"
+social:
+  - name: "GitHub"
+    url: "https://github.com/jukomol"
+    icon: "github"
+  - name: "LinkedIn"
+    url: "https://linkedin.com/in/"
+    icon: "linkedin"
+  - name: "Google Scholar"
+    url: "https://scholar.google.com/"
+    icon: "scholar"
+theme:
+  primary: "#1E3A8A"
+  accent: "#0EA5E9"
+giscus:
+  enabled: false
+  repo: ""
+  repo_id: ""
+  category: ""
+  category_id: ""

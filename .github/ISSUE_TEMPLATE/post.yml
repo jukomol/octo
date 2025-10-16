@@ -1,0 +1,37 @@
+name: "📝 New Blog Post"
+description: Create a new blog post
+title: "[POST] "
+labels: ["post"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Create a New Blog Post
+        Fill out the information below. The front matter will be extracted automatically.
+        
+  - type: textarea
+    id: content
+    attributes:
+      label: Post Content
+      description: Include YAML front matter at the top, followed by your markdown content
+      placeholder: |
+        ---
+        title: "Understanding Tractor Operator Safety"
+        date: 2025-10-16
+        tags: [computer vision, EHS]
+        summary: "Exploring AI-powered safety in agriculture."
+        cover: https://...
+        ---
+        
+        Your markdown content here...
+      value: |
+        ---
+        title: ""
+        date: 2025-10-16
+        tags: []
+        summary: ""
+        cover: 
+        ---
+        
+    validations:
+      required: true

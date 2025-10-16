@@ -1,0 +1,19 @@
+{
+  "name": "jahir-uddin-academic-site",
+  "version": "1.0.0",
+  "description": "Academic portfolio website for Jahir Uddin",
+  "type": "module",
+  "scripts": {
+    "build:css": "npx tailwindcss -i assets/css/input.css -o assets/css/output.css --minify",
+    "watch:css": "npx tailwindcss -i assets/css/input.css -o assets/css/output.css --watch",
+    "sync": "node scripts/sync_issues.mjs"
+  },
+  "dependencies": {
+    "@octokit/rest": "^20.0.2",
+    "js-yaml": "^4.1.0",
+    "slugify": "^1.6.6"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}

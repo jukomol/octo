@@ -1,0 +1,25 @@
+name: "📄 Update CV"
+description: Update CV download link
+title: "[CV] Update CV Link"
+labels: ["cv"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Update CV Download Link
+        This will update the CV download link in your profile.
+        
+  - type: input
+    id: cv_path
+    attributes:
+      label: CV File Path
+      description: Path to your CV file (e.g., /assets/cv/Jahir_Uddin_CV.pdf)
+      placeholder: "/assets/cv/Jahir_Uddin_CV.pdf"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Any additional notes about this CV update
