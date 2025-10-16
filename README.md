@@ -4,7 +4,7 @@ A fully responsive, accessible, and fault-tolerant academic website powered by G
 
 ## 🌟 Features
 
-- **GitHub Issues as CMS**: Manage all content (posts, publications, presentations, resources) through GitHub Issues
+- **GitHub Issues as CMS**: Manage all content (posts, publications, presentations, resources) through GitHub Issues - [See detailed guide](/docs/CONTENT_CREATION.md)
 - **Fully Responsive**: Mobile-first design with Tailwind CSS
 - **Accessible**: WCAG AA+ compliant with semantic HTML and keyboard navigation
 - **SEO Optimized**: Built-in SEO tags, sitemap, and schema.org markup
@@ -106,21 +106,37 @@ bundle exec jekyll serve --livereload
 
 All content is managed through GitHub Issues using labels as content types.
 
-### Creating Content
+### Quick Start: Creating Content
 
-1. Go to the **Issues** tab
+1. Go to the **Issues** tab in your repository
 2. Click **New Issue**
 3. Select the appropriate template:
-   - **📝 New Blog Post** (label: `post`)
-   - **📚 New Publication** (label: `pub`)
-   - **🎤 New Presentation** (label: `presentation`)
-   - **🔗 New Resource** (label: `resource`)
-   - **👤 Update Bio** (label: `bio`)
-   - **📄 Update CV** (label: `cv`)
+   - **📝 New Blog Post** (label: `post`) - Research updates, tutorials, thoughts
+   - **📚 New Publication** (label: `pub`) - Papers, articles, conference proceedings
+   - **🎤 New Presentation** (label: `presentation`) - Conference talks, seminars, posters
+   - **🔗 New Resource** (label: `resource`) - Datasets, code, tools
+   - **👤 Update Bio** (label: `bio`) - Personal information and profile
+   - **📄 Update CV** (label: `cv`) - CV download link
+4. Fill in the template with your content
+5. Submit the issue
+6. Content appears on your site in 1-2 minutes!
 
-### Front Matter Examples
+### 📚 Comprehensive Content Creation Guide
 
-#### Blog Post
+For detailed instructions, complete examples, and best practices, see:
+
+**[📖 CONTENT_CREATION.md](/docs/CONTENT_CREATION.md)** - Complete guide with:
+- Step-by-step tutorials for each content type
+- Real-world examples for blog posts, publications, presentations, and resources
+- YAML formatting guidelines and common pitfalls
+- Best practices and troubleshooting tips
+- Visual guides and tips for great content
+
+### Quick Reference: Front Matter Examples
+
+<details>
+<summary><b>Blog Post</b></summary>
+
 ```yaml
 ---
 title: "Understanding Tractor Operator Safety"
@@ -132,8 +148,11 @@ cover: https://example.com/image.jpg
 
 Your markdown content here...
 ```
+</details>
 
-#### Publication
+<details>
+<summary><b>Publication</b></summary>
+
 ```yaml
 ---
 title: "Smart Agricultural Operator Monitoring System (AG-OMS V2)"
@@ -146,8 +165,11 @@ code: https://github.com/username/repo
 
 Abstract and description...
 ```
+</details>
 
-#### Presentation
+<details>
+<summary><b>Presentation</b></summary>
+
 ```yaml
 ---
 title: "AI for Safer Farms"
@@ -159,8 +181,11 @@ video: https://youtube.com/watch?v=...
 
 Presentation description...
 ```
+</details>
 
-#### Resource
+<details>
+<summary><b>Resource</b></summary>
+
 ```yaml
 ---
 title: "Dataset: Tractor Climb Safety Video Set"
@@ -171,8 +196,11 @@ notes: "Synthetic and real-world operator data."
 
 Resource description...
 ```
+</details>
 
-#### Bio Update
+<details>
+<summary><b>Bio Update</b></summary>
+
 ```yaml
 ---
 name: "Jahir Uddin"
@@ -190,6 +218,7 @@ summary: |
   PhD student working on AI-enabled safety systems for agriculture.
 ---
 ```
+</details>
 
 ## ⚙️ Configuration
 
@@ -263,6 +292,9 @@ npm run build:css
 1. Check `GITHUB_TOKEN` permissions
 2. Review issue body format
 3. Check script logs in workflow run
+
+### Need more help?
+See the **[Content Creation Guide](/docs/CONTENT_CREATION.md)** for detailed troubleshooting, examples, and best practices.
 
 ## 📊 Performance
 
