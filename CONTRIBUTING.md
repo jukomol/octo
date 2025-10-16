@@ -22,6 +22,8 @@ All content is managed through GitHub Issues:
 3. Ensure front matter YAML is valid
 4. Add the appropriate label
 
+For detailed instructions and examples, see the **[Content Creation Guide](/docs/CONTENT_CREATION.md)**.
+
 ### Code Contributions
 
 1. Fork the repository
